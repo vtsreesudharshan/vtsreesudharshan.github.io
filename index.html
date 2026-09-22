@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sree Sudharshan V.T. | Software Developer | Full Stack Developer</title>
+<meta name="description" content="Portfolio of Sree Sudharshan V.T., B.E. Computer Science graduate and Software Developer with full-stack development, React, Node.js, Python, SQL and machine learning project experience.">
+<meta name="keywords" content="Sree Sudharshan V.T., Software Developer, Full Stack Developer, React, Node.js, Python, SQL, TensorFlow, JavaScript, Computer Science Engineer">
+<meta name="author" content="Sree Sudharshan V.T.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sree Sudharshan V.T. | Software Developer">
+<meta property="og:description" content="Software Developer portfolio featuring full-stack development, machine learning and database-driven projects.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --surface-2: #1B1B1B;
+    --line: #2E2E2E;
+    --ink: #EDEDED;
+    --ink-dim: #A3A3A3;
+    --ink-faint: #6B6B6B;
+    --red: #E4362A;
+    --red-dim: #8C221B;
+
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--ink);
+    --bs-border-color: var(--line);
+    --bs-primary: var(--red);
+    --bs-primary-rgb: 228,54,42;
+    --bs-link-color: var(--red);
+    --bs-link-hover-color: #ff5445;
+  }
+  [data-bs-theme="light"] {
+    --bg: #F2F1EF;
+    --surface: #FFFFFF;
+    --surface-2: #E7E5E1;
+    --line: #D2D0CB;
+    --ink: #141414;
+    --ink-dim: #55534F;
+    --ink-faint: #8A8884;
+    --red: #C82C20;
+    --red-dim: #C82C20;
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--ink);
+    --bs-border-color: var(--line);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top,0px) + 76px); }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .font-display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.01em; }
+  ::selection { background: var(--red); color: #0A0A0A; }
+  a { text-decoration: none; }
+
+  /* ---------- Navbar ---------- */
+  .navbar-custom {
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .navbar-custom .navbar-brand {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink) !important;
+  }
+  .navbar-custom .nav-link {
+    color: var(--ink-dim) !important;
+    font-weight: 500;
+    font-size: 0.94rem;
+  }
+  .navbar-custom .nav-link:hover, .navbar-custom .nav-link:focus-visible { color: var(--ink) !important; }
+  .theme-btn {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-dim);
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+  }
+  .theme-btn:hover { border-color: var(--red-dim); color: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 96px 0 64px; border-bottom: 1px solid var(--line); }
+  .hero .kicker { color: var(--red); font-weight: 600; letter-spacing: 0.01em; }
+  .hero h1 {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-size: clamp(2.8rem, 6.4vw, 4.6rem);
+    font-weight: 700;
+    font-variation-settings: 'opsz' 96;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    max-width: 15ch;
+  }
+  .hero .lede { color: var(--ink-dim); font-size: 1.2rem; max-width: 56ch; font-weight: 400; }
+  .btn-red { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+  .btn-red:hover { background: #ff4636; border-color: #ff4636; color: #fff; }
+  .btn-outline-custom { border: 1px solid var(--line); color: var(--ink); font-weight: 500; }
+  .btn-outline-custom:hover { border-color: var(--red); color: var(--red); }
+
+  section.block { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section.block:last-of-type { border-bottom: none; }
+  .eyebrow { color: var(--red); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.01em; }
+  .block h2 {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-weight: 700;
+    font-variation-settings: 'opsz' 40;
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    letter-spacing: -0.02em;
+  }
+
+  .card-custom {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    height: 100%;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .card-custom:hover { border-color: var(--red-dim); }
+  .card-custom .card-title { font-weight: 600; }
+  .card-custom .card-text { color: var(--ink-dim); }
+
+  .badge-skill {
+    background: var(--surface-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    font-weight: 500;
+    font-size: 0.82rem;
+    padding: 7px 12px;
+    border-radius: 20px;
+  }
+
+  .timeline-item { position: relative; padding-left: 32px; border-left: 2px solid var(--line); padding-bottom: 40px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .timeline-item .when { color: var(--ink-faint); font-size: 0.85rem; }
+  .timeline-item h3 { font-weight: 600; font-size: 1.15rem; margin: 4px 0 2px; }
+  .timeline-item .meta { color: var(--red); font-size: 0.92rem; margin-bottom: 10px; }
+  .timeline-item ul { color: var(--ink-dim); padding-left: 20px; margin-bottom: 0; }
+  .timeline-item li { margin-bottom: 6px; }
+
+  .project-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; height: 100%; }
+  .project-card .tag { font-size: 0.75rem; border: 1px solid var(--line); border-radius: 20px; padding: 4px 10px; color: var(--ink-dim); }
+  .project-card h3 { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: -0.015em; }
+  .project-card p { color: var(--ink-dim); }
+  .project-card ul { color: var(--ink-dim); padding-left: 18px; }
+
+  .list-group-custom .list-group-item {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--ink);
+    padding: 16px 4px;
+  }
+  .list-group-custom .list-group-item .issuer { color: var(--ink-faint); font-size: 0.88rem; }
+
+  footer.contact { padding: 80px 0 calc(60px + env(safe-area-inset-bottom,0px)); }
+  footer.contact h2 { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; font-weight: 700; font-size: clamp(2.1rem, 4.4vw, 3rem); letter-spacing: -0.025em; }
+  footer.contact p.lede { color: var(--ink-dim); max-width: 50ch; }
+  .contact-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 4px; border-top: 1px solid var(--line); color: var(--ink);
+    transition: color .15s ease, padding-left .15s ease;
+  }
+  .contact-link:last-child { border-bottom: 1px solid var(--line); }
+  .contact-link:hover { color: var(--red); padding-left: 8px; }
+  .contact-link .sub { color: var(--ink-faint); font-size: 0.88rem; }
+  .fineprint { color: var(--ink-faint); font-size: 0.85rem; margin-top: 40px; }
+
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+/* ---------- Recruiter / print polish ---------- */
+.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:12px;top:12px;z-index:2000;background:var(--surface);color:var(--ink);padding:10px 14px;border:1px solid var(--red);border-radius:8px}
+.hero .card-custom{transition:transform .18s ease,border-color .18s ease}.hero .card-custom:hover{transform:translateY(-3px)}
+@media print{
+  .navbar-custom,.theme-btn,.btn-red,.btn-outline-custom{display:none!important}
+  body{background:#fff!important;color:#111!important}
+  .hero,section.block,footer.contact{padding:28px 0;border-color:#ddd}
+  .card-custom,.project-card{background:#fff!important;border-color:#ddd!important}
+  .ink-dim,.card-text,.project-card p,.project-card ul,.timeline-item ul{color:#333!important}
+  a{color:#111!important}
+}
+@media (max-width:576px){.hero{padding:72px 0 48px}.hero h1{font-size:2.55rem}.hero .lede{font-size:1.05rem}section.block{padding:56px 0}.project-card{padding:22px}}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Sree Sudharshan V.T.",
+  "jobTitle":"Software Developer",
+  "url":"https://github.com/vtsreesudharshan",
+  "sameAs":[
+    "https://github.com/vtsreesudharshan",
+    "https://linkedin.com/in/sree-sudharshan-v-t-514117292",
+    "https://www.naukri.com/mnjuser/profile?id=&altresid"
+  ],
+  "knowsAbout":["Software Development","Full Stack Development","React.js","Node.js","Python","SQL","Machine Learning","TensorFlow","Keras"]
+}
+</script>
+
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<nav class="navbar navbar-expand-md navbar-custom sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">Sree Sudharshan</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="color:var(--ink);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-md-center gap-md-3">
+        <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item mt-2 mt-md-0"><button class="theme-btn" id="themeToggle" aria-label="Toggle theme">◐</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <p class="kicker mb-3">SOFTWARE DEVELOPER · FULL STACK · PYTHON · REACT</p>
+      <h1 class="font-display mb-4">Software Developer building reliable full-stack web applications and practical AI solutions.</h1>
+      <p class="lede mb-4">B.E. Computer Science and Engineering graduate (2026) with hands-on internship experience and project work across React, Node.js, Python, SQL, Flask and TensorFlow/Keras.</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="#contact" class="btn btn-red btn-lg px-4">Get in touch</a>
+        <a href="https://github.com/vtsreesudharshan" target="_blank" rel="noopener" class="btn btn-outline-custom btn-lg px-4">View GitHub ↗</a>
+      </div>
+      <div class="row g-3 mt-4" aria-label="Professional highlights">
+        <div class="col-sm-4"><div class="card-custom p-3"><div class="fw-semibold">Full Stack</div><div style="color:var(--ink-faint);font-size:.85rem;">React · Node · Express</div></div></div>
+        <div class="col-sm-4"><div class="card-custom p-3"><div class="fw-semibold">AI / ML</div><div style="color:var(--ink-faint);font-size:.85rem;">Python · TensorFlow · Keras</div></div></div>
+        <div class="col-sm-4"><div class="card-custom p-3"><div class="fw-semibold">Database</div><div style="color:var(--ink-faint);font-size:.85rem;">MySQL · SQL · Data Processing</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="container">
+      <p class="eyebrow mb-2">01 — About</p>
+      <h2 class="font-display mb-4">Where I come from</h2>
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <p class="mb-3" style="color:var(--ink-dim)">I'm finishing my B.E. in Computer Science and Engineering at Einstein College of Engineering, with hands-on experience building responsive web applications, database-driven systems, and AI-powered tools rather than just coursework.</p>
+          <p style="color:var(--ink-dim)">During my internship at Kite Career, I worked across the stack — React on the front end, Node and Express on the back — fixing bugs, shipping features, and working through code review like part of the team. My strongest project applied an attention-based LSTM to sequential symptom data for depression classification, which pushed me from "using scikit-learn" to reasoning about a preprocessing pipeline end to end.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card-custom p-3">
+                <div class="font-display fs-4" style="color:var(--red)">Apr–Jul '25</div>
+                <div style="color:var(--ink-faint); font-size:0.85rem;">Full Stack Intern, Kite Career</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-custom p-3">
+                <div class="font-display fs-4" style="color:var(--red)">3</div>
+                <div style="color:var(--ink-faint); font-size:0.85rem;">Independent projects built</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-custom p-3">
+                <div class="font-display fs-4" style="color:var(--red)">2022–2026</div>
+                <div style="color:var(--ink-faint); font-size:0.85rem;">B.E. Computer Science and Engineering</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="container">
+      <p class="eyebrow mb-2">02 — Skills</p>
+      <h2 class="font-display mb-4">What I work with</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card-custom p-4">
+            <div class="card-title mb-3">Languages</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-skill">Python</span><span class="badge-skill">SQL</span><span class="badge-skill">C++</span><span class="badge-skill">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-custom p-4">
+            <div class="card-title mb-3">Web</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-skill">React.js</span><span class="badge-skill">Node.js</span><span class="badge-skill">Express.js</span><span class="badge-skill">Flask</span><span class="badge-skill">HTML5</span><span class="badge-skill">CSS</span><span class="badge-skill">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-custom p-4">
+            <div class="card-title mb-3">Data &amp; ML</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-skill">MySQL</span><span class="badge-skill">Pandas</span><span class="badge-skill">NumPy</span><span class="badge-skill">Scikit-learn</span><span class="badge-skill">TensorFlow / Keras</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-custom p-4">
+            <div class="card-title mb-3">Tooling</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-skill">Git &amp; GitHub</span><span class="badge-skill">VS Code</span><span class="badge-skill">Figma</span><span class="badge-skill">Jupyter Notebook</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="strengths">
+    <div class="container">
+      <p class="eyebrow mb-2">03 — Value</p>
+      <h2 class="font-display mb-4">What I bring to a development team</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="card-custom p-4"><div class="card-title mb-2">End-to-End Delivery</div><p class="card-text mb-0">Experience spanning responsive UI development, backend APIs, database integration, debugging and deployment.</p></div></div>
+        <div class="col-md-4"><div class="card-custom p-4"><div class="card-title mb-2">Practical Problem Solving</div><p class="card-text mb-0">Hands-on project work focused on usable applications, structured data processing and maintainable implementation.</p></div></div>
+        <div class="col-md-4"><div class="card-custom p-4"><div class="card-title mb-2">Team Workflow</div><p class="card-text mb-0">Internship experience with GitHub, code reviews, bug fixing, feature development and software development standards.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="container">
+      <p class="eyebrow mb-2">04 — Experience</p>
+      <h2 class="font-display mb-5">Where I've worked</h2>
+      <div class="timeline-item">
+        <div class="when">Apr 2025 – Jul 2025 · Tenkasi</div>
+        <h3>Full Stack Development Intern</h3>
+        <div class="meta">Kite Career</div>
+        <ul>
+          <li>Built and deployed a full-stack web application using React.js, Node.js, and Express.js.</li>
+          <li>Developed responsive user interfaces using HTML5, CSS, JavaScript, and Bootstrap.</li>
+          <li>Fixed application bugs, implemented new features, and collaborated using GitHub.</li>
+          <li>Participated in code reviews and followed software development and coding standards.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="container">
+      <p class="eyebrow mb-2">05 — Projects</p>
+      <h2 class="font-display mb-5">Things I've built</h2>
+      <div class="row g-4">
+        <div class="col-lg-12">
+          <div class="project-card">
+            <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
+              <h3 class="mb-0">Mental Health and Wellbeing Surveillance</h3>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">TensorFlow/Keras</span><span class="tag">MySQL</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span>
+            </div>
+            <p>A web-based mental health assessment platform that uses an attention-based LSTM to analyze sequential symptom patterns and support depression classification.</p>
+            <ul class="mb-0">
+              <li>Built the full platform — Python/Flask backend, MySQL storage, HTML/CSS/JS/Bootstrap frontend.</li>
+              <li>Implemented an attention-based LSTM model for sequential symptom analysis.</li>
+              <li>Designed a preprocessing pipeline handling missing values, normalization, label encoding, feature processing, and sequence generation.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="project-card">
+            <h3 class="mb-2">E-Commerce Website</h3>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <p>A responsive online shopping site with a product catalogue, shopping cart, and a basic admin dashboard.</p>
+            <ul class="mb-0">
+              <li>Implemented user login and full checkout flow.</li>
+              <li>Improved usability through responsive layouts and structured front-end design.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="project-card">
+            <h3 class="mb-2">Student Management System</h3>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="tag">Python</span><span class="tag">SQL</span>
+            </div>
+            <p class="mb-0">A CRUD application for managing student records, with SQL handling storage, retrieval, and data validation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications">
+    <div class="container">
+      <p class="eyebrow mb-2">06 — Certifications</p>
+      <h2 class="font-display mb-4">Training &amp; certifications</h2>
+      <ul class="list-group list-group-custom list-group-flush">
+        <li class="list-group-item d-flex justify-content-between flex-wrap gap-2">
+          <span class="fw-medium">Cybersecurity Fundamentals</span>
+          <span class="issuer">Google Cloud Skill Boost</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between flex-wrap gap-2">
+          <span class="fw-medium">Robotic Process Automation Foundation Course</span>
+          <span class="issuer">UiPath &amp; TNSDC</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between flex-wrap gap-2">
+          <span class="fw-medium">Generative AI</span>
+          <span class="issuer">IBM SkillsBuild</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="container">
+      <p class="eyebrow mb-2">07 — Education</p>
+      <h2 class="font-display mb-5">Academic background</h2>
+      <div class="timeline-item">
+        <div class="when">2022 – 2026</div>
+        <h3>B.E. Computer Science and Engineering</h3>
+        <div class="meta" style="margin-bottom:0;">Einstein College of Engineering · GPA 74.50%</div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2021 – 2022</div>
+        <h3>HSC</h3>
+        <div class="meta" style="margin-bottom:0;">Holy Cross Matric Hr. Secondary School · GPA 75.0%</div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2019 – 2020</div>
+        <h3>SSLC</h3>
+        <div class="meta" style="margin-bottom:0;">ISMA Matric Hr. Secondary School · GPA 95.8%</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact" id="contact">
+    <div class="container">
+      <p class="eyebrow mb-2">08 — Contact</p>
+      <h2 class="mb-3">Let's build something.</h2>
+      <p class="lede mb-4">Open to entry-level Software Developer and Full Stack Developer roles. Reach out directly — I reply quickly.</p>
+      <div>
+        <a class="contact-link" href="mailto:sudharshansri496@gmail.com"><span>Email</span><span class="sub">sudharshansri496@gmail.com</span></a>
+        <a class="contact-link" href="tel:+916380173926"><span>Phone</span><span class="sub">+91 63801 73926</span></a>
+        <a class="contact-link" href="https://linkedin.com/in/sree-sudharshan-v-t-514117292" target="_blank" rel="noopener"><span>LinkedIn</span><span class="sub">sree-sudharshan-v-t</span></a>
+        <a class="contact-link" href="https://github.com/vtsreesudharshan" target="_blank" rel="noopener"><span>GitHub</span><span class="sub">vtsreesudharshan</span></a>
+        <a class="contact-link" href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank" rel="noopener"><span>Naukri</span><span class="sub">View profile</span></a>
+      </div>
+      <p class="fineprint">Sree Sudharshan V.T. — B.E. Computer Science and Engineering, 2026.</p>
+    </div>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (function() {
+    var btn = document.getElementById('themeToggle');
+    var html = document.documentElement;
+    try {
+      var saved = localStorage.getItem('portfolio-theme');
+      if (saved) html.setAttribute('data-bs-theme', saved);
+    } catch (e) {}
+    btn.addEventListener('click', function() {
+      var current = html.getAttribute('data-bs-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
